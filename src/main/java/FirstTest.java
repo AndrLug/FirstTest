@@ -48,7 +48,7 @@ public class FirstTest {
                 .findElement(By.xpath(".//input[@data-qa-node='lastNamedebitSource']"))
                 .sendKeys("Scroggs");
 
-        //Assert.assertEquals("957112193", driver.findElement(phoneNumber).getText());
+        Assert.assertEquals("957112193", driver.findElement(phoneNumber).getText());
         Assert.assertEquals("125", driver.findElement(amount).getText());
         Assert.assertEquals("4506 9093 2427 4797", driver.findElement(numberDebitSource).getText());
         Assert.assertEquals("0622", driver.findElement(expiredebitSource).getText());
