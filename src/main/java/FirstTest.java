@@ -16,7 +16,7 @@ public class FirstTest {
     By lastNamedebitSource = By.xpath(".//input[@data-qa-node='lastNamedebitSource']");
 
     @Test
-    public void checkMobiPay(){
+    public void checkMinSumMobiPay(){
         System.setProperty("webdriver.chrome.driver",
                            "src/main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -28,7 +28,7 @@ public class FirstTest {
                 .sendKeys("957112193");
         driver
                 .findElement(By.xpath(".//input[@data-qa-node='amount']"))
-                .sendKeys("125");
+                .sendKeys("1");
         driver
                 .findElement(By.xpath(".//input[@data-qa-node='numberdebitSource']"))
                 .sendKeys("4506 9093 2427 4797");
@@ -49,7 +49,7 @@ public class FirstTest {
         driver.findElement(By.xpath(".//button[@data-qa-node='submit']")).click();
 
         Assert.assertEquals("957112193", driver.findElement(phoneNumber).getText());
-        Assert.assertEquals("125", driver.findElement(amount).getText());
+        Assert.assertEquals("1", driver.findElement(amount).getText());
         Assert.assertEquals("4506 9093 2427 4797", driver.findElement(numberDebitSource).getText());
         Assert.assertEquals("0622", driver.findElement(expiredebitSource).getText());
         Assert.assertEquals("327", driver.findElement(cvvdebitSource).getText());
