@@ -39,14 +39,14 @@ public class FirstTest {
                 .findElement(By.xpath(".//input[@data-qa-node='cvvdebitSource']"))
                 .sendKeys("327");
 
-        driver.findElement(By.xpath(".//button[@data-qa-node='submit']")).click();
-
         driver
                 .findElement(By.xpath(".//input[@data-qa-node='firstNamedebitSource']"))
                 .sendKeys("Peter");
         driver
                 .findElement(By.xpath(".//input[@data-qa-node='lastNamedebitSource']"))
                 .sendKeys("Scroggs");
+        
+        driver.findElement(By.xpath(".//button[@data-qa-node='submit']")).click();
 
         Assert.assertEquals("957112193", driver.findElement(phoneNumber).getText());
         Assert.assertEquals("125", driver.findElement(amount).getText());
